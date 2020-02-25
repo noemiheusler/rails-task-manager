@@ -1,0 +1,13 @@
+<h1>INDEX</h1>
+<%@tasks.each do |task|%>
+<p><input type="checkbox"
+  <% if task.completed %>
+    checked
+  <% end %>
+  ><%= link_to task.title, task_path(task) %></p>
+  <p><%= link_to "Delete", task_path(task), method: :delete, data: { confirm: "Are you sure?" } %></p>
+<% end %>
+
+<p><%= link_to 'Task New', new_task_path%></p>
+
+
